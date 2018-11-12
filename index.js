@@ -28,7 +28,8 @@ const banWords = [
   'ex change',
   'ex.change',
   'e-xchange',
-  'exhcange'
+  'exhcange',
+  'e.x.c.h.a.n.g.e'
 ];
 
 function checkMessage(msg) {
@@ -53,7 +54,7 @@ bot.on('message', ctx => {
     if (ADMINS.indexOf(from.username) >= 0 || from.is_bot) {
       return;
     }
-    ctx.reply('Exchange listing won’t never be disclosed, or discussed by any team member in this chat. Follow our blog, Telegram ANN, or signal channel to receive the latest update', {
+    ctx.reply('Exchange listings will never be disclosed, or discussed by any team member in this chat. Follow our blog, Telegram ANN, or signal channel to receive the latest update', {
       reply_to_message_id: ctx.update.message.message_id
     });
   }
