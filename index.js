@@ -2,7 +2,23 @@
 const Telegraf = require('telegraf')
 
 const token = '792844945:AAEQeknbg3f6ujQE8VQvQ5pOcnOczz30qC0';
-const ADMINS = ['tunght91', 'longvuong', 'alex_9121', 'hothule', ''];
+const ADMINS = [
+  "alex_9121",
+  "longvuong",
+  "hoanghalc",
+  "KrisP85",
+  "vtproduction",
+  "hothule",
+  "tunght91",
+  "bitsave",
+  "Marweko1",
+  "ngtuna",
+  "thanhson1085",
+  "anhntv",
+  "nguyen5",
+  "jkms3",
+  "Victor_Ngn"];
+
 const bot = new Telegraf(token);
 
 const banWords = [
