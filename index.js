@@ -21,6 +21,15 @@ const ADMINS = [
 
 const bot = new Telegraf(token);
 
+function contain(msg, c, i) {
+  if (i) {
+    return msg.indexOf(c) === i
+  }
+  else {
+    return msg.indexOf(c) >= 0;
+  }
+}
+
 const banWords = [
   'exchange',
   'ex-change',
@@ -38,7 +47,11 @@ function checkMessage(msg) {
   msg = msg.toLowerCase();
 
   for (var i = 0; i < banWords.length; i++) {
-    if (msg.indexOf(banWords[i]) === 0 || msg.indexOf(' ' + banWords[i]) >= 0) {
+    if (
+      (contain(msg, banWords[i], 0) || msg(msg, ' ' + banWords[i])) &&
+      (contain(msg, 'new') || contain(msg, 'list') || contain(msg, 'when'))
+    )
+    {
       return banWords[i];
     }
   }
