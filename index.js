@@ -38,7 +38,9 @@ const banWords = [
   'ex.change',
   'e-xchange',
   'exhcange',
-  'e.x.c.h.a.n.g.e'
+  'e.x.c.h.a.n.g.e',
+  'binance',
+  'bittrex',
 ];
 
 function checkMessage(msg) {
