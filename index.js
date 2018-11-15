@@ -44,13 +44,14 @@ const banWords = [
 ];
 
 function checkMessage(msg) {
+  console.log(msg);
   if (!msg) return null;
 
   msg = msg.toLowerCase();
 
   for (var i = 0; i < banWords.length; i++) {
     if (
-      (contain(msg, banWords[i], 0) || msg(msg, ' ' + banWords[i])) &&
+      (contain(msg, banWords[i], 0) || contain(msg, ' ' + banWords[i])) &&
       (contain(msg, 'new') || contain(msg, 'list') || contain(msg, 'when'))
     )
     {
