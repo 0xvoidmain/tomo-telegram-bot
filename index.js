@@ -2,6 +2,7 @@
 const Telegraf = require('telegraf')
 
 const token = '792844945:AAEQeknbg3f6ujQE8VQvQ5pOcnOczz30qC0';
+const caches = {};
 const ADMINS = [
   "alex_9121",
   "longvuong",
@@ -76,9 +77,20 @@ bot.on('message', ctx => {
     if (ADMINS.indexOf(from.username) >= 0 || from.is_bot) {
       return;
     }
-    ctx.reply('Exchange listings will never be disclosed, or discussed by any team member in this chat. Follow our blog, Telegram ANN, or signal channel to receive the latest update', {
-      reply_to_message_id: ctx.update.message.message_id
-    });
+    if (caches[from.username]) {
+      if (new Date().getTime() - caches[from.username] > 12 * 60 * 60 * 1000) {
+        caches[from.username] = new Date().getTime();
+        ctx.reply('Exchange listings will never be disclosed, or discussed by any team member in this chat. Follow our blog, Telegram ANN, or signal channel to receive the latest update', {
+          reply_to_message_id: ctx.update.message.message_id
+        });
+      }
+    }
+    else {
+      caches[from.username] = caches[from.username] || new Date().getTime();
+      ctx.reply('Exchange listings will never be disclosed, or discussed by any team member in this chat. Follow our blog, Telegram ANN, or signal channel to receive the latest update', {
+        reply_to_message_id: ctx.update.message.message_id
+      });
+    }
   }
 });
 
