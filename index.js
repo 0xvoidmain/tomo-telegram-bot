@@ -45,7 +45,6 @@ const banWords = [
 ];
 
 function checkMessage(msg) {
-  console.log(msg);
   if (!msg) return null;
 
   msg = msg.toLowerCase();
@@ -79,13 +78,18 @@ bot.on('message', ctx => {
     }
     if (caches[from.username]) {
       if (new Date().getTime() - caches[from.username] > 12 * 60 * 60 * 1000) {
+        console.log('>>>', msg);
         caches[from.username] = new Date().getTime();
         ctx.reply('Exchange listings will never be disclosed, or discussed by any team member in this chat. Follow our blog, Telegram ANN, or signal channel to receive the latest update', {
           reply_to_message_id: ctx.update.message.message_id
         });
       }
+      else {
+        console.log('[x]', msg);
+      }
     }
     else {
+      console.log('>>>', msg);
       caches[from.username] = caches[from.username] || new Date().getTime();
       ctx.reply('Exchange listings will never be disclosed, or discussed by any team member in this chat. Follow our blog, Telegram ANN, or signal channel to receive the latest update', {
         reply_to_message_id: ctx.update.message.message_id
