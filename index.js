@@ -125,4 +125,4 @@ bot.on('message', ctx => {
 });
 
 
-bot.startPolling()
+bot.startPolling();
