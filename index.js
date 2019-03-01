@@ -3,6 +3,7 @@ const Telegraf = require('telegraf')
 
 const token = '792844945:AAEQeknbg3f6ujQE8VQvQ5pOcnOczz30qC0';
 const caches = {};
+caches['telegram_rule_from_tomochain'] = 0;
 const ADMINS = [
   "alex_9121",
   "longvuong",
@@ -95,6 +96,31 @@ bot.on('message', ctx => {
         reply_to_message_id: ctx.update.message.message_id
       });
     }
+  }
+  else if (new Date().getTime() - caches['telegram_rule_from_tomochain'] > 6 * 60 * 60 * 1000) {
+    var msg = `🚩 TomoChain friendly reminder:
+- No spamming, harassing, or inappropriate comments. Please respect all other members.
+- Disagreements and constructive criticism are acceptable. No FUD/spreading of false information. No unauthorized bots.
+- Keep the chat focused on TomoChain.
+- No advertising of other projects, or links/referrals;
+- No advertising masternodes for anyone in the main chat. Regarding the MasterNode owners & voters communication, please join @TomoChain_MN_Owners_Voters
+- Although token price discussion is not banned explicitly, we encourage you to join TomoChain Price Talk @TomoChainTraders to discuss further.
+- Please follow any other rules set by admins in each chat.
+
+🔹 Channels are run by Tomo Team
+- TomoChain Announcemnt @tomochainchannel
+- TomoChain Global Chat @tomochain
+- TomoChain Japan @tomochainjapan
+- TomoChain Masternode Support: Private chat
+🔹 Other channels are run by Tomo community
+- MasterNode owners & voters communication: @TomoChain_MN_Owners_Voters
+- TomoChain Price Talk @TomoChainTraders
+- TomoChain Fr: @tomo_FR
+- TomoChain Dutch: @tomochainNL
+- TomoChain Spanish: @tomoesp`
+
+    caches['telegram_rule_from_tomochain'] = new Date().getTime();
+    ctx.reply(msg);
   }
 });
 
