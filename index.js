@@ -117,7 +117,8 @@ bot.on('message', ctx => {
 - TomoChain Price Talk @TomoChainTraders
 - TomoChain Fr: @tomo_FR
 - TomoChain Dutch: @tomochainNL
-- TomoChain Spanish: @tomoesp`
+- TomoChain Spanish: @tomoesp
+- TomoChain Turkey: @tomochainTurkiye`
 
     caches['telegram_rule_from_tomochain'] = new Date().getTime();
     ctx.reply(msg);
