@@ -110,6 +110,7 @@ bot.on('message', ctx => {
 🔹 Channels are run by Tomo Team
 - TomoChain Announcemnt @tomochainchannel
 - TomoChain Global Chat @tomochain
+- TomoChain Vietnam: @tomochainvietnam
 - TomoChain Japan @tomochainjapan
 - TomoChain Masternode Support: Private chat
 🔹 Other channels are run by Tomo community
