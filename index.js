@@ -73,29 +73,29 @@ bot.on('message', ctx => {
   var msg = ctx.update.message.text || '';
   var banWord = checkMessage(msg);
   if (banWord) {
-    var from = ctx.update.message.from;
-    if (ADMINS.indexOf(from.username) >= 0 || from.is_bot) {
-      return;
-    }
-    if (caches[from.username]) {
-      if (new Date().getTime() - caches[from.username] > 12 * 60 * 60 * 1000) {
-        console.log('>>>', msg);
-        caches[from.username] = new Date().getTime();
-        ctx.reply('Exchange listings will never be disclosed, or discussed by any team member in this chat. Follow our blog, Telegram ANN, or signal channel to receive the latest update', {
-          reply_to_message_id: ctx.update.message.message_id
-        });
-      }
-      else {
-        console.log('[x]', msg);
-      }
-    }
-    else {
-      console.log('>>>', msg);
-      caches[from.username] = caches[from.username] || new Date().getTime();
-      ctx.reply('Exchange listings will never be disclosed, or discussed by any team member in this chat. Follow our blog, Telegram ANN, or signal channel to receive the latest update', {
-        reply_to_message_id: ctx.update.message.message_id
-      });
-    }
+    // var from = ctx.update.message.from;
+    // if (ADMINS.indexOf(from.username) >= 0 || from.is_bot) {
+    //   return;
+    // }
+    // if (caches[from.username]) {
+    //   if (new Date().getTime() - caches[from.username] > 12 * 60 * 60 * 1000) {
+    //     console.log('>>>', msg);
+    //     caches[from.username] = new Date().getTime();
+    //     ctx.reply('Exchange listings will never be disclosed, or discussed by any team member in this chat. Follow our blog, Telegram ANN, or signal channel to receive the latest update', {
+    //       reply_to_message_id: ctx.update.message.message_id
+    //     });
+    //   }
+    //   else {
+    //     console.log('[x]', msg);
+    //   }
+    // }
+    // else {
+    //   console.log('>>>', msg);
+    //   caches[from.username] = caches[from.username] || new Date().getTime();
+    //   ctx.reply('Exchange listings will never be disclosed, or discussed by any team member in this chat. Follow our blog, Telegram ANN, or signal channel to receive the latest update', {
+    //     reply_to_message_id: ctx.update.message.message_id
+    //   });
+    // }
   }
   else if (new Date().getTime() - caches['telegram_rule_from_tomochain'] > 3 * 60 * 60 * 1000) {
 /*    var msg = `🚩 TomoChain friendly reminder:
