@@ -98,7 +98,7 @@ bot.on('message', ctx => {
     }
   }
   else if (new Date().getTime() - caches['telegram_rule_from_tomochain'] > 6 * 60 * 60 * 1000) {
-    var msg = `🚩 TomoChain friendly reminder:
+/*    var msg = `🚩 TomoChain friendly reminder:
 - No spamming, harassing, or inappropriate comments. Please respect all other members.
 - Disagreements and constructive criticism are acceptable. No FUD/spreading of false information. No unauthorized bots.
 - Keep the chat focused on TomoChain.
@@ -119,7 +119,18 @@ bot.on('message', ctx => {
 - TomoChain Fr: @tomo_FR
 - TomoChain Dutch: @tomochainNL
 - TomoChain Spanish: @tomoesp
-- TomoChain Turkey: @tomochainTurkiye`
+- TomoChain Turkey: @tomochainTurkiye` */
+    var msg = `Welcome to Lition's official group!
+[Lition.io](Lition.io) (LIT) is developing a public-private blockchain infrastructure with deletable data features to enable enterprises to bring legally compliant blockchain applications to the mass-market.
+Token Information:
+Symbol: LIT
+Token Contract: 0x763Fa6806e1acf68130D2D0f0df754C93cC546B2
+More token info: [Coingecko](https://www.coingecko.com/en/coins/lition)
+Official Exchange Partners
+[Uniswap](https://app.uniswap.org/#/swap?outputCurrency=0x763fa6806e1acf68130d2d0f0df754c93cc546b2), TomoDEX, Idex, Binance DEX, Bidesk, Bibox
+Other useful Links:
+[Token bridge](https://token-bridge.lition.io/) | [Whitepaper](https://lition.io/docs/Lition_Whitepaper.pdf) | [Technical Paper](https://lition.io/docs/Lition_TechnicalWhitePaper.pdf) | [Website](https://lition.io/)
+Please note: DYOR! Lition.io was established in 2018. We are developing private side chains with deletable data features on top of the Ethereum Blockchain.`
 
     caches['telegram_rule_from_tomochain'] = new Date().getTime();
     ctx.reply(msg);
