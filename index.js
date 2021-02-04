@@ -137,5 +137,5 @@ Please note: DYOR! Lition.io was established in 2018. We are developing private 
   }
 });
 
-
+console.log('Started')
 bot.startPolling();
