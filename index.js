@@ -97,7 +97,7 @@ bot.on('message', ctx => {
       });
     }
   }
-  else if (new Date().getTime() - caches['telegram_rule_from_tomochain'] > 6 * 60 * 60 * 1000) {
+  else if (new Date().getTime() - caches['telegram_rule_from_tomochain'] > 3 * 60 * 60 * 1000) {
 /*    var msg = `🚩 TomoChain friendly reminder:
 - No spamming, harassing, or inappropriate comments. Please respect all other members.
 - Disagreements and constructive criticism are acceptable. No FUD/spreading of false information. No unauthorized bots.
