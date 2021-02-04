@@ -1,7 +1,7 @@
 
 const Telegraf = require('telegraf')
 
-const token = '792844945:AAEQeknbg3f6ujQE8VQvQ5pOcnOczz30qC0';
+const token = '1664736510:AAGOgYHsr8MyHzTUjgbgIOotPGvXliVJwYI';
 const caches = {};
 caches['telegram_rule_from_tomochain'] = 0;
 const ADMINS = [
