@@ -129,7 +129,7 @@ Symbol: *LIT*
 Token Contract: *0x763Fa6806e1acf68130D2D0f0df754C93cC546B2*
 
 *Official Exchange Partners*
-[Uniswap](https://app.uniswap.org/#/swap?outputCurrency=0x763fa6806e1acf68130d2d0f0df754c93cc546b2), TomoDEX, Idex, *Binance DEX*, Bidesk, Bibox
+[LuaSwap](https://app.luaswap.org/#/swap?inputCurrency=0xf9787e76750c1e731054cf4cc97a2e3f490db360) | [Uniswap](https://app.uniswap.org/#/swap?outputCurrency=0x763fa6806e1acf68130d2d0f0df754c93cc546b2), TomoDEX, Idex, *Binance DEX*, Bidesk, Bibox
 
 *Other useful Links:*
 [Token bridge](https://token-bridge.lition.io/) | [Whitepaper](https://lition.io/docs/Lition_Whitepaper.pdf) | [Technical Paper](https://lition.io/docs/Lition_TechnicalWhitePaper.pdf) | [Website](https://lition.io/)
